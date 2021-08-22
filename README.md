@@ -3,7 +3,8 @@ Data Table implemented with Hashtables in CPP. The table has the capacity for se
 
 
 Here are the functionalities offered in more detail.
-Introduction
+
+#Introduction
 A simple database table is a collection of records. Each record has the same number of fields; we'll call that the number of columns in the table. Each of the columns has a name. For example, we may have a 4-column table whose columns are named customer, product, price, and location. Here are some records we might have in this table:
 customer	product	price	location
 Patel	12345	42.54	Westwood
@@ -14,15 +15,13 @@ One database operation of interest is the one that finds all records in a table 
 	Patel 12345 42.54 Westwood
 	Patel 67890 142.75 Hollywood
 	...
-Notice that we allow more than one record to have the same key.
+Notice that more than one record may have the same key.
 Another operation is a more general query capability. We may want to select all records for which, for example, the price is less than 40. This would produce
 	O'Reilly 34567 4.99 Westwood
 	Hoang 12345 30.46 Santa Monica
 	...
-The Task
-You will implement a class Table that will provide the functionality described above.
 
-class Table
+#class Table
 The Table class is responsible for holding table records and responding to queries about them. Records must be stored in a data structure suitable for fast insertions and lookups by key: This means a tree or hash table. If you choose a tree, you do not have to worry about balancing it; if you choose a hash table, you do not have to worry about changing the number of buckets dynamically. Also, if you choose a hash table, it must not have more than 1000 buckets (to make it easier for us when we test your program on a table with thousands of records). For this project, you must implement the tree or hash table data structure yourself. You must not use any STL associative container: no map, multimap, unsorted_map, unsorted_multimap, set, multiset, unsorted_set, or unsorted_multiset. You are allowed to use vector, list, stack, and queue.
 	class Table
 	{
